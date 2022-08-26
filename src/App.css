@@ -5,10 +5,11 @@
 .grid {
   width: 300px;
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 1;
+  grid-template-rows: 1;
   grid-area: 1/1/1/1;
   z-index: 100;
+  grid-gap: 0;
 }
 
 .gridElements {
@@ -27,7 +28,29 @@
 .img {
   grid-area: 1/1/1/1;
 }
-
 .noneBorder {
   border: none;
+}
+
+.verticalLine div {
+  width: 1px;
+  background-color: black;
+}
+
+.verticalLine {
+  display: flex;
+  justify-content: space-evenly;
+  grid-area: 1/1/1/1;
+}
+
+.horizontalLines div {
+  height: 1px;
+  background-color: black;
+}
+
+.horizontalLines {
+  grid-area: 1/1/1/1;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
 }

@@ -4,11 +4,13 @@ import "./App.css";
 function App() {
   const [img, setImg] = useState("https://via.placeholder.com/300");
   const [imgHeight, setImgHeight] = useState(300);
+  const [imgWidth, setImgWidth] = useState(300);
 
   function chosenImg(e) {
     setImg(URL.createObjectURL(e.target.files[0]));
     setTimeout(() => {
       setImgHeight(document.getElementById("theImg").height);
+      setImgWidth(document.getElementById("theImg").width);
     }, 500);
   }
 
@@ -28,55 +30,23 @@ function App() {
 
       <div className="canvas">
         <div className="grid">
-          <div
-            className="gridElements noneBorder"
-            style={{ height: imgHeight / 3 }}
-          ></div>
-          <div
-            className="gridElements"
-            style={{
-              height: imgHeight / 3,
-              borderBottom: "none",
-              borderTop: "none",
-            }}
-          ></div>
-          <div
-            className="gridElements noneBorder"
-            style={{ height: imgHeight / 3 }}
-          ></div>
-          <div
-            className="gridElements"
-            style={{
-              height: imgHeight / 3,
-              borderLeft: "none",
-              borderRight: "none",
-            }}
-          ></div>
-          <div className="gridElements" style={{ height: imgHeight / 3 }}></div>
-          <div
-            className="gridElements"
-            style={{
-              height: imgHeight / 3,
-              borderLeft: "none",
-              borderRight: "none",
-            }}
-          ></div>
-          <div
-            className="gridElements noneBorder"
-            style={{ height: imgHeight / 3 }}
-          ></div>
-          <div
-            className="gridElements"
-            style={{
-              height: imgHeight / 3,
-              borderTop: "none",
-              borderBottom: "none",
-            }}
-          ></div>
-          <div
-            className="gridElements noneBorder"
-            style={{ height: imgHeight / 3 }}
-          ></div>
+          <div className="verticalLine" style={{ width: imgWidth }}>
+            <div className="v1" style={{ height: imgHeight }}></div>
+            <div className="v2" style={{ height: imgHeight }}></div>
+            <div className="v3" style={{ height: imgHeight }}></div>
+            <div className="v4" style={{ height: imgHeight }}></div>
+            <div className="v5" style={{ height: imgHeight }}></div>
+            <div className="v6" style={{ height: imgHeight }}></div>
+          </div>
+
+          <div className="horizontalLines" style={{ imgHeight }}>
+            <div className="h1" style={{ width: imgWidth }}></div>
+            <div className="h2" style={{ width: imgWidth }}></div>
+            <div className="h3" style={{ width: imgWidth }}></div>
+            <div className="h4" style={{ width: imgWidth }}></div>
+            <div className="h5" style={{ width: imgWidth }}></div>
+            <div className="h6" style={{ width: imgWidth }}></div>
+          </div>
         </div>
 
         <div className="img">
